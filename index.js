@@ -21,10 +21,24 @@ async function run() {
         const carsCollection = database.collection('cars');
         const usersCollection = database.collection('users');
         const ordersCollection = database.collection('orders');
+        const reviewsCollection = database.collection('reviews');
 
         app.post('/addProduct', async (req, res) => {
             const user = req.body;
             const result = await carsCollection.insertOne(user)
+            res.json(result)
+            console.log(result);
+        })
+        //review 
+        app.post('/reviews', async (req, res) => {
+            const review = req.body;
+            const result = await reviewsCollection.insertOne(review)
+            res.json(result)
+            console.log(result);
+        })
+        app.get('/reviews', async (req, res) => {
+
+            const result = await reviewsCollection.find({}).toArray();
             res.json(result)
             console.log(result);
         })
@@ -76,6 +90,15 @@ async function run() {
             const result = await ordersCollection.find(filter).toArray();
             console.log(result);
             console.log(email);
+            res.json(result)
+        })
+        //get user orders
+        app.delete('/myOrders/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const result = await ordersCollection.deleteOne(filter);
+            console.log(result);
+            console.log(id);
             res.json(result)
         })
         //get all products
