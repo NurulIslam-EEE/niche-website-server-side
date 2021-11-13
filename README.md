@@ -1,13 +1,15 @@
 # IMPERIAL CARS
 
+Back-end code is developed by using node.js and express .Depending on users action put,post,get ,delete method is used.User information,products information,order information are stored in mongodb
+
 Live site of [Imperial Cars](https://imperial-cars.web.app/).
 
-## Add product
+## Post method to add product in mongodb
 
-## Add Users
+## Put method to update status
 
-## Update order information
+## get method to show all products
 
-## Cancel order
+## Delete method to cancel order
 
-## Delete products
+## Post method to add review
