@@ -6,7 +6,7 @@ Live site of [Imperial Cars](https://imperial-cars.web.app/).
 
 ## Post method to add product in mongodb
 
-## Put method to update status
+## Put method to update status from pending to shipped
 
 ## get method to show all products
 
